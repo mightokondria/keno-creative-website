@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
 });
 
-// --- METADATA SEO GLOBAL ---
+// --- METADATA SEO GLOBAL AW ---
 export const metadata = {
   // Ganti URL ini dengan domain Vercel Anda nanti setelah deploy
   metadataBase: new URL("https://www.kenocreative.com"),
