@@ -3,20 +3,11 @@ import Footer from "@/components/Footer";
 import { projects } from "@/data/projects";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  PenTool,
-  Monitor,
-  Box,
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  Zap,
-  Check,
-} from "lucide-react";
+import { PenTool, Monitor, Box, Mail, Check, Zap } from "lucide-react";
+// Import komponen form yang sudah kita buat
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
-  // Ambil 6 project pertama untuk ditampilkan di home
   const featuredProjects = projects.slice(0, 6);
 
   return (
@@ -80,7 +71,7 @@ export default function Home() {
 
         {/* Marquee Text */}
         <div className="mt-24 border-y border-gray-100 py-8 overflow-hidden relative">
-          <div className="whitespace-nowrap flex gap-16 text-gray-300 font-display font-bold text-4xl uppercase tracking-widest opacity-50">
+          <div className="whitespace-nowrap flex gap-16 text-gray-300 font-display font-bold text-4xl uppercase tracking-widest opacity-50 marquee-anim">
             <span>Visual Identity</span> • <span>Web Design</span> •{" "}
             <span>Illustration</span> • <span>Motion</span> •
             <span>Visual Identity</span> • <span>Web Design</span> •{" "}
@@ -89,7 +80,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- WORK SECTION (Dynamic Data) --- */}
+      {/* --- WORK SECTION --- */}
       <section id="work" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
           <div>
@@ -119,7 +110,6 @@ export default function Home() {
                   fill
                   className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                {/* Overlay Icon */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/10 backdrop-blur-[2px]">
                   <div className="bg-white p-4 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                     <span className="text-brand-black font-bold text-sm">
@@ -245,57 +235,8 @@ export default function Home() {
           </div>
 
           <div className="bg-white border border-gray-200 p-8 md:p-10 rounded-3xl shadow-sm">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="John Doe"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors bg-gray-50"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="john@example.com"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-colors bg-gray-50"
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">
-                  Service Interest
-                </label>
-                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-accent transition-colors bg-gray-50">
-                  <option>Illustration Project</option>
-                  <option>Web Design & Dev</option>
-                  <option>Visual Identity</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  rows="4"
-                  placeholder="Tell us about your project..."
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-accent transition-colors bg-gray-50"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-brand-black text-white font-bold py-4 rounded-xl hover:bg-brand-accent transition-colors flex items-center justify-center gap-2 group"
-              >
-                Send Message{" "}
-                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </form>
+            {/* PERBAIKAN: Menggunakan Komponen ContactForm, bukan form HTML biasa */}
+            <ContactForm />
           </div>
         </div>
       </section>

@@ -15,7 +15,7 @@ export default function TeamPage() {
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
 
-      <main className="flex-grow pt-32 px-6 md:px-12 max-w-7xl mx-auto w-full animate-fade-in">
+      <main className="grow pt-32 px-6 md:px-12 max-w-7xl mx-auto w-full animate-fade-in">
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-20 animate-slide-up">
           <span className="inline-block px-4 py-1.5 rounded-full border border-gray-200 text-xs font-bold tracking-wider uppercase bg-brand-gray mb-6 text-gray-500">
@@ -41,7 +41,7 @@ export default function TeamPage() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image Card */}
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-gray-100 mb-6">
+              <div className="relative aspect-3/4 overflow-hidden rounded-2xl bg-gray-100 mb-6">
                 {/* Efek Hover Overlay */}
                 <div className="absolute inset-0 bg-brand-accent/0 group-hover:bg-brand-accent/10 transition-colors duration-500 z-10" />
 
