@@ -21,23 +21,21 @@ export const coreTeam = [
     name: "Haikal",
     role: "CFO & Illustration Supervisor",
     image: "/images/member/haikal.webp",
-    bio: "Pawang kode yang memastikan website berjalan mulus secepat kilat. Next.js enthusiast.",
+    bio: '"tidak ke kopken aku modyar"',
   },
   {
     id: 4,
-    name: "Jessica Tan",
-    role: "Brand Strategist",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
-    bio: "Otak di balik strategi branding klien. Memastikan desain tidak hanya bagus, tapi menjual.",
+    name: "Ilham (Ilmu Hitam)",
+    role: "CPO",
+    image: "/images/member/ilmu-hitam.jpeg",
+    bio: "Nasi Padang Bundo Ayu is my wife material",
   },
   {
     id: 5,
-    name: "Jennifer English",
-    role: "Brand Strategist",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
-    bio: "Otak di balik strategi branding klien. Memastikan desain tidak hanya bagus, tapi menjual.",
+    name: "Kades",
+    role: "COO",
+    image: "/images/member/kades.jpeg",
+    bio: "hidup mahasiswa",
   },
 ];
 

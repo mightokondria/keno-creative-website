@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { projects } from "@/data/projects";
 import Link from "next/link";
 import Image from "next/image";
-import { PenTool, Monitor, Box, Mail, Check, Zap } from "lucide-react";
+import { Mail, Check, Zap } from "lucide-react"; // Hapus import ikon yang tidak dipakai lagi
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
@@ -73,9 +73,9 @@ export default function Home() {
         <div className="mt-24 border-y border-gray-100 py-8 overflow-hidden relative">
           <div className="whitespace-nowrap flex gap-16 text-gray-300 font-display font-bold text-4xl uppercase tracking-widest opacity-50 marquee-anim">
             <span>Visual Identity</span> • <span>Web Design</span> •{" "}
-            <span>Illustration</span> • <span>Motion</span> •
+            <span>Illustration</span> • <span>Web Development</span> •
             <span>Visual Identity</span> • <span>Web Design</span> •{" "}
-            <span>Illustration</span> • <span>Motion</span>
+            <span>Illustration</span> • <span>Social Media Design</span>
           </div>
         </div>
       </section>
@@ -170,40 +170,41 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              icon: PenTool,
               title: "Illustration",
-              color: "text-brand-accent",
-              bg: "bg-blue-50",
               items: [
                 "Character Design",
                 "Editorial Illustration",
                 "Iconography",
               ],
+              // PERUBAHAN DI SINI: Menambahkan gambar untuk Illustration
+              image: "/images/logo-keno/illustrasi.png",
             },
             {
-              icon: Monitor,
               title: "Web Design",
-              color: "text-green-600",
-              bg: "bg-green-50",
               items: ["UI/UX Design", "Landing Pages", "Framer / Webflow Dev"],
+              image: "/images/logo-keno/web-design.png",
             },
             {
-              icon: Box,
               title: "Visual Identity",
-              color: "text-purple-600",
-              bg: "bg-purple-50",
               items: ["Logo Design", "Brand Guidelines", "Art Direction"],
+              // PERUBAHAN DI SINI: Menambahkan gambar untuk Visual Identity
+              image: "/images/logo-keno/visual-identity.png",
             },
           ].map((service, idx) => (
             <div
               key={idx}
               className="p-10 border border-gray-100 rounded-3xl hover:border-brand-black hover:shadow-xl transition-all duration-300 group bg-white"
             >
-              <div
-                className={`w-16 h-16 ${service.bg} rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform ${service.color}`}
-              >
-                <service.icon className="w-8 h-8" />
+              {/* PERUBAHAN LOGIKA RENDER GAMBAR: Hapus container background (w-16 h-16 bg-...) */}
+              <div className="relative w-16 h-16 mb-8 group-hover:scale-105 transition-transform">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-contain" // Gunakan object-contain agar gambar tidak terpotong
+                />
               </div>
+
               <h3 className="font-display font-bold text-2xl mb-4">
                 {service.title}
               </h3>
