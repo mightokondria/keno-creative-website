@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image"; // Import komponen Image
 
 export default function Footer() {
   // --- KONFIGURASI LINK MEDSOS DI SINI ---
@@ -20,11 +21,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Logo & Copyright */}
         <div className="text-center md:text-left">
-          <span className="font-display font-bold text-xl tracking-tight">
-            KENO.
-          </span>
-          <p className="text-gray-500 text-sm mt-2">
-            © 2024 Keno Creative Studio. All rights reserved.
+          {/* Logo Container */}
+          <div className="relative h-8 w-32 mb-4 mx-auto md:mx-0">
+            <Image
+              src="/images/logo-keno/logo-1.png"
+              alt="Keno Creative"
+              fill
+              className="object-contain object-center md:object-left"
+            />
+          </div>
+          <p className="text-gray-500 text-sm">
+            © 2025 Keno Creative Studio. All rights reserved.
           </p>
         </div>
 
