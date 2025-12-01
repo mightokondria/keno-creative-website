@@ -4,11 +4,11 @@ import { projects } from "@/data/projects";
 import Link from "next/link";
 import Image from "next/image";
 import { PenTool, Monitor, Box, Mail, Check, Zap } from "lucide-react";
-// Import komponen form yang sudah kita buat
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
-  const featuredProjects = projects.slice(0, 6);
+  // PERUBAHAN DI SINI: Mengambil hanya 3 project pertama (sebelumnya 6)
+  const featuredProjects = projects.slice(0, 3);
 
   return (
     <main className="min-h-screen bg-white">
@@ -37,7 +37,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link
-                href="#work"
+                href="/work" // Ubah link ini ke halaman work penuh jika mau
                 className="bg-brand-black text-white px-8 py-4 rounded-full font-semibold hover:bg-brand-accent transition-all transform hover:-translate-y-1"
               >
                 Lihat Karya
@@ -53,7 +53,7 @@ export default function Home() {
 
           {/* Hero Image / Illustration Placeholder */}
           <div className="relative h-[400px] md:h-[600px] w-full bg-gray-100 rounded-3xl overflow-hidden animate-slide-up delay-100 group">
-            <div className="absolute inset-0 bg-linear-to-br from-blue-100 to-yellow-100 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-yellow-100 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
               <div className="text-center opacity-30 group-hover:opacity-50 transition-opacity">
                 <Zap className="w-32 h-32 mx-auto text-brand-black mb-4" />
               </div>
@@ -88,10 +88,16 @@ export default function Home() {
               Selected Work
             </h2>
             <p className="text-gray-500 max-w-md">
-              Kumpulan proyek terbaik kami. Klik untuk melihat detail studi
-              kasus.
+              Kumpulan proyek terbaik kami.
             </p>
           </div>
+          {/* Tombol Lihat Semua Karya */}
+          <Link
+            href="/work"
+            className="hidden md:inline-flex items-center font-bold text-brand-black hover:text-brand-accent transition-colors border-b-2 border-brand-black hover:border-brand-accent pb-1"
+          >
+            Lihat Semua Portfolio &rarr;
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
@@ -102,7 +108,7 @@ export default function Home() {
               className="group cursor-pointer"
             >
               <div
-                className={`relative overflow-hidden rounded-2xl ${project.bgColor} aspect-4/3 mb-6 shadow-sm group-hover:shadow-md transition-all`}
+                className={`relative overflow-hidden rounded-2xl ${project.bgColor} aspect-[4/3] mb-6 shadow-sm group-hover:shadow-md transition-all`}
               >
                 <Image
                   src={project.image}
@@ -133,6 +139,16 @@ export default function Home() {
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* Tombol Mobile Lihat Semua */}
+        <div className="mt-12 text-center md:hidden">
+          <Link
+            href="/work"
+            className="inline-block bg-brand-gray px-8 py-4 rounded-full font-bold hover:bg-brand-black hover:text-white transition-all"
+          >
+            Lihat Semua Portfolio
+          </Link>
         </div>
       </section>
 
@@ -235,7 +251,6 @@ export default function Home() {
           </div>
 
           <div className="bg-white border border-gray-200 p-8 md:p-10 rounded-3xl shadow-sm">
-            {/* PERBAIKAN: Menggunakan Komponen ContactForm, bukan form HTML biasa */}
             <ContactForm />
           </div>
         </div>

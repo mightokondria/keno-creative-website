@@ -1,28 +1,26 @@
 // data/team.js
 
-export const teamMembers = [
+// --- TIM INTI (CORE TEAM) ---
+export const coreTeam = [
   {
     id: 1,
-    name: "Rizky Keno",
-    role: "Founder & Creative Director",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800", // Ganti dengan foto asli nanti
-    bio: "Visioner di balik Keno. Pecinta kopi hitam dan desain minimalis yang fungsional.",
+    name: "Arjun",
+    role: "Founder & CEO",
+    image: "/images/member/arjun.png",
+    bio: "Listening to Aimyon 24/7",
   },
   {
     id: 2,
-    name: "Sarah Amalia",
-    role: "Lead Illustrator",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800",
-    bio: "Mengubah ide abstrak menjadi visual yang playful. Spesialis karakter dan warna pastel.",
+    name: "Isan",
+    role: "CMO",
+    image: "/images/member/isan.jpeg",
+    bio: "Mengubah air tawar menjadi air asin",
   },
   {
     id: 3,
-    name: 'Dimas "Code" Pratama',
-    role: "Senior Web Developer",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800",
+    name: "Haikal",
+    role: "CFO & Illustration Supervisor",
+    image: "/images/member/haikal.webp",
     bio: "Pawang kode yang memastikan website berjalan mulus secepat kilat. Next.js enthusiast.",
   },
   {
@@ -35,18 +33,45 @@ export const teamMembers = [
   },
   {
     id: 5,
-    name: "Budi Santoso",
-    role: "Motion Designer",
+    name: "Jennifer English",
+    role: "Brand Strategist",
     image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800",
-    bio: "Membuat aset statis menjadi hidup dengan animasi yang smooth dan eye-catching.",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
+    bio: "Otak di balik strategi branding klien. Memastikan desain tidak hanya bagus, tapi menjual.",
+  },
+];
+
+// --- MITRA & KOLABORATOR (PARTNERS) ---
+export const partners = [
+  {
+    id: 101,
+    name: "Davin",
+    role: "Illustration Partner",
+    image: "/images/mitra/davin.webp", // Bisa logo studio atau foto tim
+    bio: "Bersama keno, terus berinovasi menghasilkan karya grafis yang inovatif",
   },
   {
-    id: 6,
-    name: "Alya Putri",
-    role: "Project Manager",
+    id: 102,
+    name: "Budi Santoso",
+    role: "Freelance Copywriter",
     image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800",
-    bio: "Penjaga deadline dan komunikasi klien. Memastikan semua proyek selesai tepat waktu.",
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800",
+    bio: "Kata-katanya tajam dan menghipnotis. Membantu kami menyusun narasi brand yang kuat.",
+  },
+  {
+    id: 103,
+    name: "Lensa Kita",
+    role: "Photography Vendor",
+    image:
+      "https://images.unsplash.com/photo-1554048612-387768052bf7?auto=format&fit=crop&q=80&w=800",
+    bio: "Spesialis fotografi produk dan korporat yang selalu menjadi andalan Keno.",
+  },
+  {
+    id: 104,
+    name: "Lensa Kita",
+    role: "Photography Vendor",
+    image:
+      "https://images.unsplash.com/photo-1554048612-387768052bf7?auto=format&fit=crop&q=80&w=800",
+    bio: "Spesialis fotografi produk dan korporat yang selalu menjadi andalan Keno.",
   },
 ];
