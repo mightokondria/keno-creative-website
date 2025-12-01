@@ -6,19 +6,53 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 
-// Fungsi generateStaticParams tetap sama (tidak perlu diubah)
+// --- 1. FUNGSI SEO DINAMIS (Metadata) ---
+export async function generateMetadata({ params }) {
+  // Await params (Wajib di Next.js 15+)
+  const { slug } = await params;
+
+  // Cari data project
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  return {
+    title: project.title, // Judul Tab Browser
+    description: project.description, // Deskripsi di Google
+
+    // Tampilan saat link dishare (WA/Twitter/FB)
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      images: [
+        {
+          url: project.image, // Menggunakan gambar utama project sebagai thumbnail link
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
+    },
+  };
+}
+
+// --- 2. FUNGSI STATIC GENERATION (Performa) ---
 export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
   }));
 }
 
-// PERUBAHAN: Tambahkan 'async' di sini
+// --- 3. KOMPONEN UTAMA HALAMAN ---
 export default async function ProjectDetail({ params }) {
-  // PERUBAHAN: Kita harus 'await' params terlebih dahulu
+  // Await params terlebih dahulu
   const { slug } = await params;
 
-  // Cari data project berdasarkan slug yang sudah di-await
+  // Cari data project
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
@@ -30,7 +64,7 @@ export default async function ProjectDetail({ params }) {
       <Navbar />
 
       <main className="grow pt-32 px-6 md:px-12 max-w-7xl mx-auto w-full animate-fade-in">
-        {/* Tombol Kembali ke Galeri */}
+        {/* Tombol Kembali */}
         <div className="mb-8">
           <Link
             href="/#work"
@@ -41,7 +75,7 @@ export default async function ProjectDetail({ params }) {
           </Link>
         </div>
 
-        {/* Bagian Header: Judul & Kategori */}
+        {/* Header Project */}
         <div className="mb-12 border-b border-gray-100 pb-12">
           <div className="flex flex-wrap gap-3 mb-6">
             <span className="px-4 py-1.5 bg-brand-black text-white text-sm font-bold rounded-full uppercase tracking-wider">
@@ -61,7 +95,7 @@ export default async function ProjectDetail({ params }) {
           </p>
         </div>
 
-        {/* Gambar Utama (Hero Image Project) */}
+        {/* Gambar Utama */}
         <div className="w-full aspect-video bg-gray-100 rounded-3xl overflow-hidden mb-16 shadow-lg relative">
           <Image
             src={project.image}
@@ -72,7 +106,7 @@ export default async function ProjectDetail({ params }) {
           />
         </div>
 
-        {/* Bagian Detail Studi Kasus */}
+        {/* Detail Studi Kasus */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24 mb-24">
           <div className="space-y-4">
             <h3 className="font-display font-bold text-2xl border-l-4 border-red-400 pl-4">
@@ -100,19 +134,19 @@ export default async function ProjectDetail({ params }) {
           </div>
         </div>
 
-        {/* Gallery Images */}
+        {/* Gallery Section (Dinamis) */}
         {project.gallery && project.gallery.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             {project.gallery.map((galleryImage, index) => (
               <div
                 key={index}
-                className="aspect-square bg-gray-100 rounded-2xl relative overflow-hidden group"
+                className="aspect-square bg-gray-100 rounded-2xl relative overflow-hidden shadow-sm group"
               >
                 <Image
                   src={galleryImage}
-                  alt={`${project.title} - Gallery Image ${index + 1}`}
+                  alt={`Gallery image ${index + 1} for ${project.title}`}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             ))}
