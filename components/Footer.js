@@ -7,11 +7,7 @@ export default function Footer() {
     { name: "Instagram", url: "https://instagram.com/keno_creativee" }, // Ganti dengan link asli
     {
       name: "Behance",
-      url: "https://www.youtube.com/watch?v=C1yP_GQ9s4E&list=RDC1yP_GQ9s4E&start_radio=1&pp=ygUhb24gdGhpcyBkYXkgd2Ugc2F5IGdvb2RieWUgYWlteW9uoAcB",
-    },
-    {
-      name: "Dribbble",
-      url: "https://www.youtube.com/watch?v=C1yP_GQ9s4E&list=RDC1yP_GQ9s4E&start_radio=1&pp=ygUhb24gdGhpcyBkYXkgd2Ugc2F5IGdvb2RieWUgYWlteW9uoAcB",
+      url: "https://www.behance.net/keno_creative",
     },
     { name: "LinkedIn", url: "https://www.linkedin.com/company/keno-creative" },
   ];

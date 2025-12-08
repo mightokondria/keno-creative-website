@@ -3,15 +3,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react"; // Import icon ExternalLink
 import { notFound } from "next/navigation";
 
 // --- 1. FUNGSI SEO DINAMIS (Metadata) ---
 export async function generateMetadata({ params }) {
-  // Await params (Wajib di Next.js 15+)
   const { slug } = await params;
-
-  // Cari data project
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
@@ -21,16 +18,14 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: project.title, // Judul Tab Browser
-    description: project.description, // Deskripsi di Google
-
-    // Tampilan saat link dishare (WA/Twitter/FB)
+    title: `${project.title} | Keno Creative`,
+    description: project.description,
     openGraph: {
       title: project.title,
       description: project.description,
       images: [
         {
-          url: project.image, // Menggunakan gambar utama project sebagai thumbnail link
+          url: project.image,
           width: 1200,
           height: 630,
           alt: project.title,
@@ -40,7 +35,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// --- 2. FUNGSI STATIC GENERATION (Performa) ---
+// --- 2. FUNGSI STATIC GENERATION ---
 export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
@@ -49,10 +44,7 @@ export async function generateStaticParams() {
 
 // --- 3. KOMPONEN UTAMA HALAMAN ---
 export default async function ProjectDetail({ params }) {
-  // Await params terlebih dahulu
   const { slug } = await params;
-
-  // Cari data project
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
@@ -67,7 +59,7 @@ export default async function ProjectDetail({ params }) {
         {/* Tombol Kembali */}
         <div className="mb-8">
           <Link
-            href="/#work"
+            href="/work"
             className="inline-flex items-center gap-2 text-gray-500 hover:text-brand-black transition-colors group px-4 py-2 rounded-full hover:bg-gray-100 -ml-4"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
@@ -81,18 +73,40 @@ export default async function ProjectDetail({ params }) {
             <span className="px-4 py-1.5 bg-brand-black text-white text-sm font-bold rounded-full uppercase tracking-wider">
               {project.year}
             </span>
+
             <span
               className={`px-4 py-1.5 ${project.bgColor} ${project.iconColor} text-sm font-bold rounded-full uppercase tracking-wider`}
             >
               {project.category}
             </span>
+
+            {/* Lokasi Negara */}
+            {project.location && (
+              <span className="px-4 py-1.5 border border-gray-200 text-gray-600 text-sm font-bold rounded-full uppercase tracking-wider flex items-center gap-2 bg-white">
+                {project.location}
+              </span>
+            )}
           </div>
+
           <h1 className="font-display font-bold text-5xl md:text-7xl mb-8 leading-tight">
             {project.title}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl leading-relaxed font-light mb-8">
             {project.description}
           </p>
+
+          {/* --- TOMBOL VISIT LIVE SITE (BARU) --- */}
+          {project.projectLink && (
+            <a
+              href={project.projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-black text-white rounded-full font-bold hover:bg-brand-accent transition-colors group"
+            >
+              Visit Live Site
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </a>
+          )}
         </div>
 
         {/* Gambar Utama */}
@@ -134,19 +148,21 @@ export default async function ProjectDetail({ params }) {
           </div>
         </div>
 
-        {/* Gallery Section (Dinamis) */}
+        {/* Gallery Section */}
         {project.gallery && project.gallery.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             {project.gallery.map((galleryImage, index) => (
               <div
                 key={index}
-                className="aspect-square bg-gray-100 rounded-2xl relative overflow-hidden shadow-sm group"
+                className="w-full bg-gray-100 rounded-2xl overflow-hidden shadow-sm group"
               >
                 <Image
                   src={galleryImage}
                   alt={`Gallery image ${index + 1} for ${project.title}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  width={0}
+                  height={0}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             ))}

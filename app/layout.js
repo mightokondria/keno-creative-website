@@ -19,15 +19,16 @@ export const metadata = {
   metadataBase: new URL("https://www.kenocreative.com"),
 
   title: {
-    default: "Keno Creative | Digital Studio Pekalongan",
+    default: "Keno Creative | Digital Studio Surakarta, Indonesia",
     template: "%s | Keno Creative",
   },
   description:
-    "Studio desain digital spesialis Branding, Web Design, dan Ilustrasi berbasis di Pekalongan. Kami membantu brand tampil beda.",
+    "Studio desain digital spesialis Branding, Web Design, dan Ilustrasi berbasis di Surakarta. Kami membantu brand tampil beda.",
   keywords: [
     "Digital Studio",
     "Graphic Design",
     "Web Design Pekalongan",
+    "Web Design Surakarta",
     "Branding Agency",
     "Jasa Bikin Website Murah",
     "Jasa Desain Logo",
@@ -40,6 +41,7 @@ export const metadata = {
     "Jasa Desain Framer",
     "Jasa Desain Webflow",
     "Jasa Desain Figma",
+    "Jasa Website Wordpress",
     "Jasa Desain Adobe Illustrator",
     "Jasa Desain Adobe Photoshop",
     "Jasa Desain Adobe InDesign",
@@ -65,7 +67,7 @@ export const metadata = {
     siteName: "Keno Creative",
     images: [
       {
-        url: "/images/og-image-default.jpg",
+        url: "/images/logo-keno/logo-emblem.png",
         width: 1200,
         height: 630,
         alt: "Keno Creative Studio Cover",

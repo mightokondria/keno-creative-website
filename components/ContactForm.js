@@ -35,7 +35,7 @@ export default function ContactForm() {
       {/* Tampilan Error Umum jika ada masalah koneksi */}
       {state.errors && state.errors.length > 0 && (
         <div className="bg-red-50 text-red-600 p-4 rounded-xl flex items-center gap-2 text-sm font-bold animate-fade-in border border-red-100">
-          <AlertCircle className="w-5 h-5 flex-shrink-0" />
+          <AlertCircle className="w-5 h-5 shrink-0" />
           <p>
             Gagal mengirim pesan. Pastikan Form ID benar atau coba lagi nanti.
           </p>

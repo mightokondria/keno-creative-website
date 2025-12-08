@@ -45,31 +45,14 @@ export const partners = [
     id: 101,
     name: "Davin",
     role: "Illustration Partner",
-    image: "/images/mitra/davin.webp", // Bisa logo studio atau foto tim
+    image: "/images/mitra/davin.png", // Bisa logo studio atau foto tim
     bio: "Bersama keno, terus berinovasi menghasilkan karya grafis yang inovatif",
   },
   {
     id: 102,
-    name: "Budi Santoso",
-    role: "Freelance Copywriter",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800",
-    bio: "Kata-katanya tajam dan menghipnotis. Membantu kami menyusun narasi brand yang kuat.",
-  },
-  {
-    id: 103,
-    name: "Lensa Kita",
-    role: "Photography Vendor",
-    image:
-      "https://images.unsplash.com/photo-1554048612-387768052bf7?auto=format&fit=crop&q=80&w=800",
-    bio: "Spesialis fotografi produk dan korporat yang selalu menjadi andalan Keno.",
-  },
-  {
-    id: 104,
-    name: "Lensa Kita",
-    role: "Photography Vendor",
-    image:
-      "https://images.unsplash.com/photo-1554048612-387768052bf7?auto=format&fit=crop&q=80&w=800",
-    bio: "Spesialis fotografi produk dan korporat yang selalu menjadi andalan Keno.",
+    name: "Uzumaki Juju",
+    role: "Illustration Partner",
+    image: "/images/mitra/juju.png", // Bisa logo studio atau foto tim
+    bio: "work work work and get money",
   },
 ];

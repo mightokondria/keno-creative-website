@@ -1,134 +1,214 @@
 // data/projects.js
-// Database project dengan properti 'gallery' baru
+// Database project murni (Tanpa import Icon React agar aman untuk sitemap.js)
 
 export const projects = [
+  // --- PROJECT ILLUSTRATION : BRAVE JACK ---
   {
-    slug: "matcha-story",
-    title: "Matcha Story Branding",
-    category: "Visual Identity",
-    year: "2025",
-    // Gambar Utama
-    image: "/images/matcha-cover-1.jpg",
+    slug: "brave-jack",
+    title: "Brave Jack Picture Book",
+    category: "Illustration",
+    year: "2023",
+    location: "Uni Emirates Arab 🇦🇪",
+    // Gambar Utama (Pastikan file ada di public/images/)
+    image: "/images/illustration/brave-jack/cover.png",
     bgColor: "bg-[#f0fdf4]",
     iconColor: "text-[#15803d]",
     description:
-      "Identitas visual yang menenangkan untuk kedai matcha artisan modern. Menggabungkan estetika Jepang tradisional dengan sentuhan minimalis kontemporer.",
+      "Visualisasi kisah menyentuh hati tentang 'Brave Jack', seekor tikus kecil dengan keberanian raksasa. Buku anak yang mengajarkan bahwa pahlawan sejati tidak dilihat dari fisik, melainkan dari keteguhan hati.",
     challenge:
-      "Menciptakan brand image yang menonjol di tengah tren kopi kekinian, sekaligus mengedukasi pasar tentang matcha asli.",
+      "Klien kami dari UAE memiliki naskah yang kuat dengan pesan moral mendalam: keberanian tidak diukur dari ukuran tubuh. Tantangannya adalah menciptakan karakter tikus (Jack) yang secara visual terlihat kecil dan rentan, namun harus bisa memancarkan tekad yang sangat besar dan tak tergoyahkan.",
     solution:
-      'Kami menggunakan palet warna "Earth Tone" dan tipografi serif yang elegan untuk memberikan kesan premium namun tetap hangat dan ramah.',
+      "Kami menghidupkan dunia Jack melalui desain karakter yang sangat ekspresif, menonjolkan 'semangat besar' di balik mata kecilnya. Kami menggunakan gaya ilustrasi yang hangat dan dinamis untuk membangun atmosfer petualangan yang menegangkan namun tetap ramah untuk pembaca anak-anak.",
     result:
-      "Berhasil membuka 3 cabang baru dalam waktu 6 bulan dengan antrian pelanggan yang konsisten.",
+      "Hasilnya adalah sebuah buku cerita yang tidak hanya indah secara estetika, tetapi juga sukses menyampaikan pesan emosional bahwa kekuatan sejati berasal dari hati yang berani. Karakter Jack berhasil menjadi sosok yang inspiratif bagi pembaca muda.",
 
-    // --- BAGIAN INI YANG SEBELUMNYA HILANG ---
+    // Gallery Images (Pastikan file ada di public/images/)
     gallery: [
-      "/images/matcha-interior.jpg", // Gambar Setup Toko
-      "/images/matcha-cover-2.jpg", // Gambar Setup Toko
+      "/images/illustration/brave-jack/1.png",
+      "/images/illustration/brave-jack/2.png",
+      "/images/illustration/brave-jack/3.png",
     ],
   },
+  // --- PROJECT ILLUSTRATION: EDUCATIONAL COMIC ---
   {
-    slug: "neo-mascot",
-    title: "Neo Mascot Design",
+    slug: "edu-comic",
+    title: "Educational Comic Panels",
     category: "Illustration",
-    year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
-    bgColor: "bg-[#FFEDD5]",
-    iconColor: "text-[#F97316]",
+    year: "2023-2024",
+    location: "Algeria 🇩🇿", // Aljazair
+    // Pastikan simpan gambar panel komik ke folder public/images
+    image: "/images/illustration/amel/cover.png",
+    bgColor: "bg-[#ecfeff]", // Cyan muda (sesuai nuansa buku)
+    iconColor: "text-[#0891b2]", // Cyan tua
     description:
-      "Desain maskot futuristik untuk startup teknologi blockchain. Maskot ini dirancang untuk terlihat ramah namun canggih.",
+      "Seri panel komik edukatif untuk buku pelajaran Bahasa Inggris tingkat Sekolah Dasar di Aljazair. Ilustrasi yang dirancang khusus untuk menjembatani pemahaman bahasa melalui visual.",
     challenge:
-      "Klien membutuhkan wajah untuk brand teknologi yang sering dianggap dingin dan sulit dipahami.",
+      "Klien membutuhkan ilustrasi yang tidak hanya menarik, tetapi juga berfungsi sebagai alat ajar efektif. Gambar harus bisa menyampaikan konteks dan makna secara instan, bahkan sebelum siswa memahami teks bahasa asingnya.",
     solution:
-      'Kami menciptakan karakter "Neo" dengan bentuk bulat yang ramah namun dengan palet warna neon cyberpunk.',
+      "Kami mengembangkan gaya seni yang bersih (clean) dan ekspresif, berfokus pada gestur dan mimik wajah yang jelas untuk membantu pemahaman dialog. Setiap panel dirancang sebagai 'adegan mini' yang mandiri.",
     result:
-      "Brand awareness meningkat 40% di media sosial setelah peluncuran maskot.",
-    gallery: [], // Kosongkan jika tidak ada galeri tambahan
+      "Ilustrasi ini berhasil menjadi jembatan pedagogis yang kuat, membantu siswa memahami kosakata dan struktur kalimat baru dengan cara yang menyenangkan dan intuitif.",
+    gallery: [
+      "/images/illustration/amel/1.png",
+      "/images/illustration/amel/2.png",
+    ],
   },
+  // --- PROJECT VISUAL IDENTITY: OISHII ---
   {
-    slug: "fintech-dash",
-    title: "Fintech Dashboard",
-    category: "Web Design",
-    year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=1200",
-    bgColor: "bg-[#E0F2FE]",
-    iconColor: "text-[#0EA5E9]",
-    description:
-      "Perancangan ulang antarmuka pengguna (UI) untuk platform manajemen keuangan pribadi.",
-    challenge:
-      "Pengguna lama mengeluhkan dashboard yang terlalu padat dan membingungkan.",
-    solution:
-      'Penyederhanaan tata letak dengan prinsip "Progressive Disclosure".',
-    result: "Waktu penyelesaian tugas pengguna berkurang rata-rata 25%.",
-    gallery: [],
-  },
-  {
-    slug: "brew-co",
-    title: "Brew Co. Branding",
+    slug: "oishi!",
+    title: "Oishi! Branding",
     category: "Visual Identity",
-    year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=1200",
-    bgColor: "bg-[#F3E8FF]",
-    iconColor: "text-[#A855F7]",
-    description: "Identitas visual lengkap untuk kedai kopi artisan lokal.",
-    challenge:
-      "Bersaing di pasar kedai kopi yang sangat jenuh dengan visual yang generik.",
-    solution:
-      "Menggali sejarah lokasi kedai untuk menciptakan narasi visual yang otentik.",
-    result: "Menjadi tempat nongkrong terpopuler di area tersebut.",
-    gallery: [],
-  },
-  {
-    slug: "urban-store",
-    title: "Urban Store E-com",
-    category: "Web Design",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
-    bgColor: "bg-[#DCFCE7]",
-    iconColor: "text-[#22C55E]",
-    description: "Website e-commerce responsif untuk brand fashion streetwear.",
+    // location: "Algeria 🇩🇿", // Aljazair
+    // Pastikan simpan gambar panel komik ke folder public/images
+    image: "/images/visual-identity/oishii/cover.png",
+    bgColor: "bg-[#ecfeff]", // Cyan muda (sesuai nuansa buku)
+    iconColor: "text-[#0891b2]", // Cyan tua
+    description:
+      "Sebuah identitas visual yang mengangkat esensi kuliner Jepang melalui pendekatan modern-minimalis. Dengan menjadikan huruf “O” sebagai simbol sushi kubus, desain ini memadukan geometri presisi, warna tegas, dan komposisi bersih demi membangun kesan autentik, berani, dan mudah dikenali.",
     challenge:
-      "Tingkat cart abandonment yang tinggi pada website versi sebelumnya.",
+      "Menciptakan visual identity untuk brand restoran Jepang yang tidak jatuh pada klise, seperti ikon sushi generik, tipografi standar Jepang, atau penggunaan warna merah-putih yang repetitif. Tantangannya adalah membuat identitas yang segar namun tetap terasa “Jepang”, tanpa kehilangan kesan modern dan premium.",
     solution:
-      "Redesain alur checkout menjadi one-page checkout dan optimasi performa mobile.",
-    result: "Konversi penjualan meningkat 15% dalam bulan pertama peluncuran.",
-    gallery: [],
+      "Tim kami merancang logo dengan mengambil huruf “O” dari nama OISHI lalu mengubahnya menjadi ikon sushi berbentuk kubus. Palet warna menggunakan merah pekat sebagai warna utama untuk memberi kesan berani dan menggugah selera, dipadukan dengan putih murni sebagai aksentuasi khas estetika Jepang yang bersih, minimal, dan elegan. Visual pendukung seperti chopstick, box take-away, hingga pola modular digunakan untuk memperkuat konsistensi sistem identitas.",
+    result:
+      "Tercipta sebuah brand identity restoran Jepang yang unik, otentik, dan mudah diingat. Logo yang terinspirasi dari huruf “O” menjadi ikon kuat yang menyatu dengan karakter makanan Jepang. Sistem warna, layout, dan elemen visual membantu OISHI tampil sebagai brand yang modern, premium, dan konsisten, baik di media digital maupun bentuk fisik.",
+    gallery: [
+      "/images/visual-identity/oishii/1.png",
+      "/images/visual-identity/oishii/2.png",
+      "/images/visual-identity/oishii/3.png",
+      "/images/visual-identity/oishii/4.png",
+    ],
   },
+  // --- PROJECT VISUAL IDENTITY: OISHII ---
   {
-    slug: "festival-sticker",
-    title: "Summer Fest Art",
+    slug: "deshun-shine",
+    title: "Dshunshine",
+    category: "Visual Identity",
+    year: "2025",
+    // location: "Algeria 🇩🇿", // Aljazair
+    // Pastikan simpan gambar panel komik ke folder public/images
+    image: "/images/visual-identity/dshun-shine/dsunshin/cover.png",
+    bgColor: "bg-[#ecfeff]", // Cyan muda (sesuai nuansa buku)
+    iconColor: "text-[#0891b2]", // Cyan tua
+    description:
+      "Sebuah identitas visual yang mengangkat esensi kuliner Jepang melalui pendekatan modern-minimalis. Dengan menjadikan huruf “O” sebagai simbol sushi kubus, desain ini memadukan geometri presisi, warna tegas, dan komposisi bersih demi membangun kesan autentik, berani, dan mudah dikenali.",
+    challenge:
+      "Menciptakan visual identity untuk brand restoran Jepang yang tidak jatuh pada klise, seperti ikon sushi generik, tipografi standar Jepang, atau penggunaan warna merah-putih yang repetitif. Tantangannya adalah membuat identitas yang segar namun tetap terasa “Jepang”, tanpa kehilangan kesan modern dan premium.",
+    solution:
+      "Tim kami merancang logo dengan mengambil huruf “O” dari nama OISHI lalu mengubahnya menjadi ikon sushi berbentuk kubus. Palet warna menggunakan merah pekat sebagai warna utama untuk memberi kesan berani dan menggugah selera, dipadukan dengan putih murni sebagai aksentuasi khas estetika Jepang yang bersih, minimal, dan elegan. Visual pendukung seperti chopstick, box take-away, hingga pola modular digunakan untuk memperkuat konsistensi sistem identitas.",
+    result:
+      "Tercipta sebuah brand identity restoran Jepang yang unik, otentik, dan mudah diingat. Logo yang terinspirasi dari huruf “O” menjadi ikon kuat yang menyatu dengan karakter makanan Jepang. Sistem warna, layout, dan elemen visual membantu OISHI tampil sebagai brand yang modern, premium, dan konsisten, baik di media digital maupun bentuk fisik.",
+    gallery: [
+      "/images/visual-identity/dshun-shine/dsunshin/2.png",
+      "/images/visual-identity/dshun-shine/dsunshin/3.png",
+      "/images/visual-identity/dshun-shine/dsunshin/4.png",
+    ],
+  },
+  // --- PROJECT ILLUSTRATION: MUSIC NOTES ---
+  {
+    slug: "music-notes",
+    title: "Music Notes Fundamental",
     category: "Illustration",
-    year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1558655146-d09347e0d7a8?auto=format&fit=crop&q=80&w=1200",
-    bgColor: "bg-[#FFD1DC]",
-    iconColor: "text-[#DB2777]",
-    description:
-      "Seri ilustrasi dan stiker untuk festival musik musim panas tahunan.",
-    challenge: 'Menciptakan merchandise yang "collectible" dan viral.',
-    solution:
-      'Membuat seri karakter "Summer Misfits" yang mewakili berbagai tipe penonton.',
-    result: "Merchandise sold out dalam 2 hari pertama festival.",
-    gallery: [],
-  },
-  {
-    slug: "tech-rebrand",
-    title: "Tech Corp Rebrand",
-    category: "Visual Identity",
     year: "2022",
-    image:
-      "https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&q=80&w=1200",
-    bgColor: "bg-[#FAE8FF]",
-    iconColor: "text-[#D946EF]",
-    description: "Penyegaran merek total untuk perusahaan solusi IT korporat.",
+    location: "Singapore 🇸🇬",
+    // Pastikan simpan gambar cover buku musik ke folder public/images
+    image: "/images/illustration/music-notes/cover.jpg",
+    bgColor: "bg-[#eff6ff]", // Biru langit cerah (Blue-50)
+    iconColor: "text-[#d946ef]", // Fuchsia/Pink ceria
+    description:
+      "Buku panduan musik interaktif untuk pelajar muda. Proyek ini mengubah teori musik teknis yang membosankan menjadi petualangan visual yang menyenangkan dan mudah dipahami anak-anak.",
     challenge:
-      "Persepsi publik bahwa perusahaan sudah tua dan tertinggal teknologi.",
+      "Sebuah sekolah musik terkemuka di Singapura membutuhkan buku panduan eksklusif. Tantangannya adalah bagaimana menyajikan teori musik yang rumit (seperti not balok dan tempo) agar tidak mengintimidasi, melainkan memikat imajinasi siswa.",
     solution:
-      "Rebranding total dengan sistem identitas dinamis (dynamic identity).",
-    result: "Berhasil menarik talenta muda baru untuk melamar kerja.",
-    gallery: [],
+      "Kami merancang serangkaian karakter maskot yang ramah (seperti Gajah musisi) dan ilustrasi yang penuh warna. Kami menerjemahkan konsep abstrak menjadi visual konkret yang mudah diingat untuk menemani perjalanan belajar siswa.",
+    result:
+      "Buku ini berhasil menjadi alat ajar yang efektif sekaligus menghibur. Setiap halaman tidak hanya informatif, tetapi juga memicu rasa ingin tahu dan kecintaan terhadap musik pada siswa-siswa muda.",
+    gallery: [
+      "/images/illustration/music-notes/1.jpg",
+      "/images/illustration/music-notes/2.jpg",
+      "/images/illustration/music-notes/3.jpg",
+    ],
+  },
+  // --- PROJECT ILLUSTRATION: SANDRA---
+  {
+    slug: "how-grandma-got-better-after-stroke",
+    title: "How Grandma Got Better After Stroke",
+    category: "Illustration",
+    year: "2023",
+    location: "USA 🇺🇸",
+    // Pastikan simpan gambar cover buku musik ke folder public/images
+    image: "/images/illustration/how-grandma-got-better-after-stroke/cover.jpg",
+    bgColor: "bg-[#eff6ff]", // Biru langit cerah (Blue-50)
+    iconColor: "text-[#d946ef]", // Fuchsia/Pink ceria
+    description:
+      "Buku bergambar edukatif yang dirancang untuk membantu anak-anak memahami kondisi stroke yang dialami anggota keluarga. Sebuah jembatan antara dunia medis yang kompleks dengan narasi keluarga yang hangat dan penuh harapan.",
+    challenge:
+      "Menjelaskan dampak stroke (seperti kelumpuhan wajah atau hilangnya kemampuan motorik) kepada anak-anak bisa menjadi hal yang menakutkan. Tantangannya adalah memvisualisasikan realitas medis tersebut secara jujur dan akurat, namun tetap lembut dan tidak memicu trauma pada pembaca muda.",
+    solution:
+      "Kami menggunakan pendekatan visual yang empatik dengan gaya 'hand-drawn' yang hangat. Melalui metafora sederhana (seperti benang rajut yang kusut) dan ekspresi karakter yang tulus, kami menggambarkan proses rehabilitasi bukan sebagai sesuatu yang menakutkan, melainkan sebagai perjalanan kesabaran dan cinta keluarga.",
+    result:
+      "Buku ini kini digunakan oleh keluarga dan praktisi keperawatan di AS sebagai alat bantu komunikasi (therapeutic tool). Visualnya berhasil meredakan kecemasan anak-anak dan membantu mereka memahami bahwa pemulihan Nenek adalah proses bertahap yang membutuhkan dukungan mereka.",
+    gallery: [
+      "/images/illustration/how-grandma-got-better-after-stroke/1.jpg",
+      "/images/illustration/how-grandma-got-better-after-stroke/2.jpg",
+      "/images/illustration/how-grandma-got-better-after-stroke/3.jpg",
+      "/images/illustration/how-grandma-got-better-after-stroke/4.jpg",
+    ],
+  },
+  // --- PROJECT WEB DESIGN : SUDUT POTRAIT ---
+  {
+    slug: "sudut-portrait",
+    title: "Sudut Potrait",
+    category: "Web Design",
+    year: "2025",
+    location: "Solo, Indonesia 🇮🇩",
+    // Gambar Utama (Pastikan file ada di public/images/)
+    image: "/images/web-dev/sudut-potrait/cover.png",
+    bgColor: "bg-[#f0fdf4]",
+    iconColor: "text-[#15803d]",
+    description:
+      "Bekerja sama dengan salah satu tim Wibawa, Sudut Potrait, kami membantu mereka untuk mmebuat tampilan antarmuka untuk aplikasi photobooth mereka dan juga beberapa ilustrasi untuk identitas visual Sudut Potrait",
+    challenge:
+      "Sudut potrait memiliki model bisnis yang sangat menarik dan traffic yang sangat ramai. Kami perlu membuat antarmuka dan tampilan yang baru tapi tetap relevan terhadap brand ini.",
+    solution:
+      "Kami memebuat tidak hanya tampilan antarmuka yang relevan, kami juga secara sekaligus membuat tampilan branding untuk brand ini. Jadi tidak hanya antarmuka Sudut Potrait yang baru, mereka juga dapat menggunakan aset-aset dari kami untuk digunakan untuk media lain.",
+    result:
+      "Hasilnya adalah tidak hanya antarmuka yang accessible, tapi juga sebuah pendukung bagi identitas brand dari Sudut Potrait itu sendiri.",
+
+    // Gallery Images (Pastikan file ada di public/images/)
+    gallery: [
+      "/images/web-dev/sudut-potrait/1.png",
+      "/images/web-dev/sudut-potrait/2.png",
+      "/images/web-dev/sudut-potrait/3.png",
+    ],
+  },
+  // --- PROJECT WEB DESIGN : KARASUKA ---
+  {
+    slug: "karasuka",
+    title: "Karasuka Merch Store",
+    category: "Web Design",
+    projectLink: "https://karasuka.framer.website/",
+    year: "2025",
+    location: "Solo, Indonesia 🇮🇩",
+    // Gambar Utama (Pastikan file ada di public/images/)
+    image: "/images/web-dev/karasuka/cover-2.png",
+    bgColor: "bg-[#f0fdf4]",
+    iconColor: "text-[#15803d]",
+    description:
+      "Landing page e-commerce untuk brand merchandise mahasiswa DKV UNS. Sebuah etalase digital yang merayakan budaya desain, sarkasme deadline, dan kreativitas tanpa batas.",
+    challenge:
+      "Target audiensnya adalah mahasiswa seni yang kritis terhadap visual. Tantangannya adalah membuat website yang tidak terlihat 'kaku' atau 'korporat', melainkan harus memancarkan aura *chaos* yang estetik dan semangat muda.",
+    solution:
+      "Kami menggunakan pendekatan 'Brutalist Design' dengan tipografi bold yang dominan, layout asimetris, dan *copywriting* yang menyentil kehidupan mahasiswa desain (seperti slogan 'Born Deadline Dead'). Navigasi dibuat simpel namun visual produk dibuat menonjol.",
+    result:
+      "Website ini berhasil membangun *hype* yang tinggi saat peluncuran pre-order. Identitas visual yang kuat membuat brand Karasukan semakin lekat sebagai representasi kebanggaan mahasiswa DKV UNS.",
+
+    // Gallery Images (Pastikan file ada di public/images/)
+    gallery: [
+      "/images/web-dev/karasuka/1.png",
+      "/images/web-dev/karasuka/2.png",
+      "/images/web-dev/karasuka/3.png",
+      "/images/web-dev/karasuka/cover.png",
+    ],
   },
 ];

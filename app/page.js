@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { projects } from "@/data/projects";
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Check, Zap } from "lucide-react"; // Hapus import ikon yang tidak dipakai lagi
+import { Mail, Check } from "lucide-react"; // Hapus import ikon yang tidak dipakai lagi
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
@@ -25,15 +25,14 @@ export default function Home() {
               Creative Digital Studio
             </div>
             <h1 className="font-display font-bold text-5xl md:text-7xl leading-[0.95] tracking-tight text-brand-black">
-              We craft <br />
-              <span className="text-brand-accent italic">playful</span> brands &{" "}
-              <br />
-              digital joy.
+              <span className="text-brand-black italic">
+                Illustration. Branding. Digital Experience.
+              </span>
             </h1>
             <p className="text-gray-600 text-lg md:text-xl max-w-md leading-relaxed">
-              Keno Creative adalah partner Anda dalam menciptakan Identitas
-              Visual, Desain Web, dan Ilustrasi yang tidak hanya estetik, tapi
-              juga strategis.
+              Satu studio untuk semua kebutuhan visual Anda. Kami merancang
+              ilustrasi yang bercerita, identitas brand yang kuat, dan antarmuka
+              digital yang intuitif.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link
@@ -53,9 +52,17 @@ export default function Home() {
 
           {/* Hero Image / Illustration Placeholder */}
           <div className="relative h-[400px] md:h-[600px] w-full bg-gray-100 rounded-3xl overflow-hidden animate-slide-up delay-100 group">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-yellow-100 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
+            <div className="absolute inset-0 bg-linear-to-br from-blue-100 to-yellow-100 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
               <div className="text-center opacity-30 group-hover:opacity-50 transition-opacity">
-                <Zap className="w-32 h-32 mx-auto text-brand-black mb-4" />
+                {/* <Zap className="w-32 h-32 mx-auto text-brand-black mb-4" /> */}
+                <div className="relative w-40 h-40 mx-auto mb-4">
+                  <Image
+                    src="/images/logo-keno/transparent-3.png"
+                    alt="Hero Icon"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
             {/* Floating Elements */}
@@ -63,7 +70,7 @@ export default function Home() {
               <span className="text-4xl">🎨</span>
             </div>
             <div className="absolute bottom-20 left-10 bg-brand-black text-white p-6 rounded-xl shadow-xl transform -rotate-3 group-hover:rotate-0 transition-all duration-500">
-              <p className="font-display font-bold text-xl">100+ Projects</p>
+              <p className="font-display font-bold text-xl">25+ Projects</p>
               <p className="text-xs text-gray-400">Delivered with love</p>
             </div>
           </div>
@@ -108,7 +115,7 @@ export default function Home() {
               className="group cursor-pointer"
             >
               <div
-                className={`relative overflow-hidden rounded-2xl ${project.bgColor} aspect-[4/3] mb-6 shadow-sm group-hover:shadow-md transition-all`}
+                className={`relative overflow-hidden rounded-2xl ${project.bgColor} aspect-4/3 mb-6 shadow-sm group-hover:shadow-md transition-all`}
               >
                 <Image
                   src={project.image}

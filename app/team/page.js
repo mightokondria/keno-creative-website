@@ -40,7 +40,7 @@ export default function TeamPage() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12">
             {coreTeam.map((member, index) => (
               <div
                 key={member.id}
@@ -93,7 +93,7 @@ export default function TeamPage() {
                   className="group flex items-center gap-6 p-6 border border-gray-100 rounded-2xl hover:border-brand-accent/30 hover:shadow-lg transition-all bg-white animate-slide-up"
                   style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                 >
-                  <div className="relative w-16 h-16 shrink-0 overflow-hidden rounded-full bg-gray-100 border border-gray-200">
+                  <div className="relative w-20 h-20 shrink-0 overflow-hidden rounded-full bg-gray-100 border border-gray-200">
                     <Image
                       src={partner.image}
                       alt={partner.name}
